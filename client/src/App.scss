@@ -1,0 +1,62 @@
+@use "./partials/fonts.scss" as *;
+@use "./partials/variables.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: inherit;
+}
+
+body {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  height: 100%;
+  background-color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto";
+}
+
+main {
+  padding: 0 2rem;
+}
+
+// links & buttons
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.app {
+  display: flex;
+
+  &__main {
+    // background-color: pink;
+    padding: 5rem;
+    width: 100%;
+    height: 100%;
+  }
+}

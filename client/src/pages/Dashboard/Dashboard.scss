@@ -1,0 +1,18 @@
+@use "../../partials/variables.scss" as *;
+
+.dashboard {
+  &__header {
+    line-height: 4rem;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: "Open Sans";
+    color: $light-black;
+    // padding-bottom: 3rem;
+  }
+
+  &__made-components {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
