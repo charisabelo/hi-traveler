@@ -1,4 +1,209 @@
 @use "../../partials/variables.scss" as *;
+@use "../../partials/mixins.scss" as *;
 
 .nav {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding: 4rem 8rem 4.3rem 7.4rem;
+  justify-content: space-between;
+  width: 100%;
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    background-image: url("../../assets/images/hitraveler-logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 17rem;
+    height: 3rem;
+
+    &-icon {
+      background-image: url("../../assets/images/hitraveler-icon.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    justify-content: end;
+    margin-right: 2rem;
+    align-items: center;
+  }
+
+  &__bars-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+
+    &.nav__bars-container--desktop {
+      display: none;
+    }
+  }
+
+  &__link-caret {
+    margin-left: 0.5rem;
+  }
+
+  &__menu-item {
+    position: relative;
+    z-index: 100;
+  }
+
+  &__link {
+    background-color: $white;
+    color: $darkest-platinum;
+    font-size: 1.5rem;
+    font-family: "Roboto";
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 2.6rem;
+    position: relative;
+    z-index: 100;
+
+    &:hover {
+      color: $darker-platinum;
+      transition: 0.3s;
+    }
+
+    &.dropdown {
+      display: flex;
+      align-items: center;
+    }
+
+    &--container {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__menu-item--btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: $white;
+    color: $darkest-platinum;
+    font-weight: 400;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    font-size: 1.8rem;
+    font-family: "Roboto";
+    transition: 0.3s;
+
+    &:hover {
+      color: $darker-platinum;
+      transition: 0.3s;
+    }
+  }
+
+  &__link-span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $platinum;
+    border-radius: 50%;
+    padding-bottom: 0.2rem;
+    height: 2.3rem;
+    width: 2.2rem;
+    font-size: 1.3rem;
+    margin-left: 0.9rem;
+    margin-top: 0.3rem;
+    font-weight: 600;
+  }
+
+  &__link--mobile {
+    display: none;
+    // position: absolute;
+  }
+
+  &__bars-icon,
+  &__x-icon {
+    font-size: 2rem;
+    margin-top: 0.4rem;
+  }
+
+  @include tablet {
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      width: min-content;
+      height: 38rem;
+      position: absolute;
+      top: -100%;
+      left: 70%;
+      opacity: 1;
+      transition: all 0.5s ease;
+      overflow: hidden;
+      padding: 0 2rem 3rem 0;
+
+      &.active {
+        overflow: hidden;
+        background-color: $white;
+        top: 0;
+        right: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+        border-radius: 1rem;
+      }
+    }
+
+    &__link {
+      text-align: right;
+      padding: 2rem 3.7rem 2rem 2rem;
+      width: 100%;
+      display: table;
+    }
+
+    &__menu-item--btn {
+    }
+
+    &__bars-container {
+      &.nav__bars-container--desktop {
+        position: relative;
+        z-index: 100;
+        display: initial;
+      }
+    }
+
+    &__menu-item {
+      height: 4rem;
+      width: 15rem;
+      background-color: transparent;
+      // padding-right: 2rem;
+    }
+
+    &__link--mobile {
+      margin-top: 0.9rem;
+      display: flex;
+      background: $white;
+      text-decoration: none;
+      color: $darkest-platinum;
+      font-size: 1.5rem;
+      // text-align: left;
+      padding-left: 3rem;
+
+      &:hover {
+        background: $white;
+        transition: 250ms;
+      }
+    }
+
+    &__btn.nav__mobile {
+      display: none;
+    }
+  }
 }

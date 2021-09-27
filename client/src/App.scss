@@ -52,11 +52,11 @@ a:active {
 
 .app {
   display: flex;
+  flex-direction: column;
 
-  &__main {
-    // background-color: pink;
-    padding: 5rem;
-    width: 100%;
-    height: 100%;
-  }
+  // &__main {
+  //   padding: 5rem;
+  //   width: 100%;
+  //   height: 100%;
+  // }
 }

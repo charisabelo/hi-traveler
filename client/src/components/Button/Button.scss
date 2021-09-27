@@ -1,0 +1,48 @@
+@use "../../partials/variables.scss" as *;
+
+@use "../../partials/mixins.scss" as *;
+
+.button {
+  cursor: pointer;
+  &__btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: $white;
+    color: $darkest-platinum;
+    font-weight: 600;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    font-family: "Roboto";
+    transition: 0.3s;
+
+    &:hover {
+      color: $darker-platinum;
+      transition: 0.3s;
+    }
+  }
+
+  &__span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $platinum;
+    border-radius: 50%;
+    padding-bottom: 0.2rem;
+    height: 2.3rem;
+    width: 2.2rem;
+    font-size: 1.3rem;
+    margin-left: 0.9rem;
+    margin-top: 0.3rem;
+    font-weight: 700;
+  }
+
+  @include tablet {
+    & {
+      display: none;
+      position: absolute;
+    }
+  }
+}

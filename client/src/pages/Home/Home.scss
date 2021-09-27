@@ -1,18 +1,10 @@
 @use "../../partials/variables.scss" as *;
+@use "../../partials/mixins.scss" as *;
 
-.dashboard {
+.home {
   &__header {
-    line-height: 4rem;
-    font-size: 3rem;
-    font-weight: 700;
-    font-family: "Open Sans";
-    color: $light-black;
-    // padding-bottom: 3rem;
-  }
-
-  &__made-components {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    background-image: url("../../assets/images/dash-cover.jpg");
+    background-position-y: 40%;
+    @include header;
   }
 }

@@ -1,1 +1,10 @@
 @use "../../partials/variables.scss" as *;
+@use "../../partials/mixins.scss" as *;
+
+.tours {
+  &__header {
+    background-image: url("../../assets/images/tours.jpg");
+    background-position-y: 60%;
+    @include header;
+  }
+}

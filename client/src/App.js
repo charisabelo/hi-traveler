@@ -8,6 +8,7 @@ import Planner from "./pages/Planner/Planner";
 import Restaurants from "./pages/Restaurants/Restaurants";
 import ThingsToDo from "./pages/ThingsToDo/ThingsToDo";
 import Tours from "./pages/Tours/Tours";
+import All from "./pages/All/All";
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(true);
@@ -30,7 +31,8 @@ function App() {
                   component={Restaurants}
                 ></Route>
                 <Route path="/thingstodo" exact component={ThingsToDo}></Route>
-                <Route path="/tours" component={Tours}></Route>
+                <Route path="/tours" exact component={Tours}></Route>
+                <Route path="/all" exact component={All}></Route>
               </Switch>
             </div>
           </div>

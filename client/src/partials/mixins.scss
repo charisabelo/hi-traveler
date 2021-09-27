@@ -1,0 +1,15 @@
+@mixin header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: auto;
+  margin: 0 8rem;
+  height: 50rem;
+  border-radius: 2.4rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
