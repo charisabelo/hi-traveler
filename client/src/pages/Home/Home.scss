@@ -7,4 +7,18 @@
     background-position-y: 40%;
     @include header;
   }
+
+  &__main {
+    margin: -5rem;
+  }
+
+  &__recommend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &-container {
+      padding-bottom: 14rem;
+    }
+  }
 }

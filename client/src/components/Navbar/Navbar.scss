@@ -142,18 +142,20 @@
       width: min-content;
       height: 38rem;
       position: absolute;
+      right: 3.8rem;
       top: -100%;
-      left: 70%;
+      // left: 70%;
       opacity: 1;
       transition: all 0.5s ease;
       overflow: hidden;
       padding: 0 2rem 3rem 0;
 
       &.active {
+        right: 3.8rem;
         overflow: hidden;
         background-color: $white;
         top: 0;
-        right: 0;
+        // right: 0;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;

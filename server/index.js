@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const businessesRoute = require("./routes/businesses");
-const plannerRoute = require("./routes/planner");
 
 require("dotenv").config();
 const PORT = process.env.PORT || 8080;
@@ -19,7 +18,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/businesses", businessesRoute);
-app.use("/planner", plannerRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);

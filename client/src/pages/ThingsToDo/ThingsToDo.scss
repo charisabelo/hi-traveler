@@ -2,9 +2,19 @@
 @use "../../partials/mixins.scss" as *;
 
 .to-do {
+  min-height: 100vh;
+
   &__header {
     background-image: url("../../assets/images/maunakea.jpg");
     background-position-y: 80%;
     @include header;
+  }
+
+  &__list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -5rem;
+    padding-bottom: 4rem;
   }
 }

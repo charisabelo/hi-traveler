@@ -3,7 +3,6 @@ const router = express.Router();
 const fs = require("fs");
 
 const businessesPath = "./data/businesses.json";
-const plannerPath = "./data/planner.json";
 
 // get all businesses
 const getBusinesses = () => {
@@ -23,6 +22,21 @@ router.get("/", (req, res) => {
   try {
     const businesses = getBusinesses();
     return res.status(200).json(businesses);
+  } catch (error) {
+    return res.status(500).json({ error: "Path not found" });
+  }
+});
+
+router.get("/:id", (req, res) => {
+  try {
+    const businesses = getBusinesses();
+    const business = businesses.find(
+      (business) => business.id === req.params.id
+    );
+
+    if (business) {
+      res.status(200).json(business);
+    }
   } catch (error) {
     return res.status(500).json({ error: "Path not found" });
   }

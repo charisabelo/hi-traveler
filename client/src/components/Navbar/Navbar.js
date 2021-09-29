@@ -1,5 +1,5 @@
 import "./Navbar.scss";
-import { useState, useEffect, React } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GoThreeBars, GoX } from "react-icons/go";
 import { FaCaretDown } from "react-icons/fa";
@@ -22,29 +22,20 @@ const Navbar = () => {
   const closeMobileMenu = () => setClick(false);
 
   const onMouseEnter = () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth > 768) {
+      setDropdown(true);
+    } else {
+      setDropdown(false);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth > 768) {
       setDropdown(false);
     } else {
       setDropdown(true);
     }
   };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 768) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
-
-  // useEffect(() => {
-  //   function handleResize() {
-  //     if (window.innerWidth > 768) {
-  //       setTablet(false);
-  //     }
-  //   }
-  //   window.addEventListener("resize", handleResize);
-  // });
 
   function handleResize() {
     if (window.innerWidth < 768) {
@@ -54,12 +45,17 @@ const Navbar = () => {
     }
   }
 
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setTablet(true);
+    }
+  }, []);
+
   window.addEventListener("resize", handleResize);
 
   return (
     <nav className="nav">
       <div className="nav__logo-container">
-        {/* <div className="nav__logo-icon"></div> */}
         <Link to="/" onClick={closeMobileMenu}>
           <div className="nav__logo"></div>
         </Link>
@@ -120,10 +116,10 @@ const Navbar = () => {
             <Link to="#" className="nav__link dropdown">
               Categories <FaCaretDown className="nav__link-caret" />
             </Link>
-
-            {transition((style, item) => {
-              return item ? (
-                <animated.div className="item" style={style}>
+            {/* {dropdown ? <Dropdown /> : ""} */}
+            {transition((style, itemAnimate) => {
+              return itemAnimate ? (
+                <animated.div className="itemAnimate" style={style}>
                   <Dropdown />
                 </animated.div>
               ) : (

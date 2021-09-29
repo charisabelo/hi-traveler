@@ -1,1 +1,15 @@
 @use "../../partials/variables.scss" as *;
+
+.all {
+  min-height: 100vh;
+  padding: 2rem 8rem;
+  display: flex;
+  justify-content: center;
+
+  &__business-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 4rem 0;
+  }
+}

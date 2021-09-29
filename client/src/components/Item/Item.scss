@@ -1,0 +1,151 @@
+@use "../../partials/mixins.scss" as *;
+@use "../../partials/variables.scss" as *;
+
+#outer__container {
+  padding: 1.5rem 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.3rem 1.3rem;
+  border-radius: 1rem;
+  width: 24rem;
+  height: 40rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: $white;
+  margin-right: 2rem;
+
+  &:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+
+  &__main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 1.1rem;
+  }
+
+  &__image {
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    background-size: cover;
+    height: 15rem;
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  &__image-icon {
+    color: hsl(135, 63%, 50%);
+    margin-right: 0.7rem;
+    font-size: 1.6rem;
+  }
+
+  &__small-business {
+    font-size: 1.3rem;
+    color: hsl(135, 63%, 50%);
+    font-weight: 600;
+  }
+
+  &__business-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__header {
+    font-size: 1.6rem;
+    padding: 1.5rem 0 0.1rem 0;
+    font-weight: 700;
+  }
+
+  &__description {
+    font-size: 1.3rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__location-container {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__location-icon {
+    color: $darkest-platinum;
+    font-size: 1.5rem;
+  }
+
+  &__location-span {
+    margin-left: 0.5rem;
+    color: $darkest-platinum;
+  }
+
+  &__icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+
+  &__recommends {
+    display: flex;
+    align-items: center;
+  }
+
+  &__recommends-paragraph {
+    font-weight: 600;
+    margin-right: 0.7rem;
+  }
+
+  &__stars-span {
+    margin-left: 0.7rem;
+    // margin-top: 0.1rem;
+    font-weight: 600;
+  }
+
+  &__star-icon {
+    // margin-top: 0.1rem;
+    font-size: 1.5rem;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: $white;
+    background-color: hsl(135, 63%, 48%);
+    border-radius: 2.5rem;
+    padding: 1.3rem 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      background-color: hsl(135, 63%, 39%);
+      transition: 0.4s;
+    }
+  }
+
+  &__plus-icon {
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+  }
+}

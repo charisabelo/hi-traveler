@@ -1,0 +1,21 @@
+@use "../../partials/variables.scss" as *;
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 8rem;
+  padding: 2rem 0;
+
+  &__logo {
+    background-image: url("../../assets/images/hitraveler-logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 3rem;
+    width: 13rem;
+  }
+
+  &__copyright {
+    padding-bottom: 0.5rem;
+  }
+}
