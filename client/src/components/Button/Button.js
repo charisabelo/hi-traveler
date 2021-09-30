@@ -16,7 +16,7 @@ const Button = () => {
   return (
     <Link to="/planner" className="button">
       <button className="button__btn">
-        Planner <span className="button__span">{plannerCart.length || 0}</span>
+        Planner <span className="button__span">{localCart.length || 0}</span>
       </button>
     </Link>
   );

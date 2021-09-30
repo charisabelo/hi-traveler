@@ -33,6 +33,9 @@ const App = () => {
   };
 
   useEffect(() => {
+    setLocalCart(JSON.parse(localStorage.getItem("planner")));
+    console.log(localCart);
+
     axios.get("http://localhost:8080/businesses").then((res) => {
       setBusinesses(res.data);
     });

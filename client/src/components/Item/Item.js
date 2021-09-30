@@ -24,7 +24,7 @@ const Item = (props) => {
   useEffect(() => {
     // console.log("ran");
     window.addEventListener("storage", () => {
-      setPlannerCart(JSON.parse(localStorage.getItem("planner")) || []);
+      setLocalCart(JSON.parse(localStorage.getItem("planner")) || []);
     });
   }, [didChange]);
 

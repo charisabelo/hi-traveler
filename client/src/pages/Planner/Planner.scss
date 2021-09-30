@@ -2,4 +2,15 @@
 
 .planner {
   min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 8rem;
+
+  &__list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 4rem 0;
+  }
 }

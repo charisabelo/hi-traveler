@@ -62,7 +62,7 @@ const Navbar = () => {
 
   const openBizModal = () => {
     setShowAddModal((prev) => !prev);
-    console.log(showAddModal);
+    // console.log(showAddModal);
   };
 
   return (
@@ -152,8 +152,7 @@ const Navbar = () => {
             className="nav__link nav__link--container nav__link--mobile"
             onClick={closeMobileMenu}
           >
-            Planner{" "}
-            <span className="nav__link-span">{plannerCart.length || 0}</span>
+            Planner <span className="nav__link-span">{localCart.length}</span>
           </Link>
         </li>
       </ul>
