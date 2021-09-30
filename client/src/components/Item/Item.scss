@@ -14,7 +14,7 @@
   width: 24rem;
   height: 40rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  cursor: pointer;
+
   transition: 0.4s;
   background-color: $white;
   margin-right: 2rem;
@@ -30,6 +30,7 @@
     justify-content: space-between;
     height: 100%;
     padding-bottom: 1.1rem;
+    cursor: pointer;
   }
 
   &__image {
@@ -116,16 +117,16 @@
 
   &__stars-span {
     margin-left: 0.7rem;
-    // margin-top: 0.1rem;
     font-weight: 600;
   }
 
   &__star-icon {
-    // margin-top: 0.1rem;
     font-size: 1.5rem;
   }
 
   &__btn {
+    position: relative;
+    z-index: 50;
     display: flex;
     align-items: center;
     justify-content: center;

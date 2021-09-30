@@ -11,13 +11,6 @@ const getBusinesses = () => {
   return parsedFileContent;
 };
 
-// get all planner items
-const getPlanner = () => {
-  const fileContent = fs.readFileSync(plannerPath);
-  const parsedFileContent = JSON.parse(fileContent);
-  return parsedFileContent;
-};
-
 router.get("/", (req, res) => {
   try {
     const businesses = getBusinesses();
@@ -39,6 +32,37 @@ router.get("/:id", (req, res) => {
     }
   } catch (error) {
     return res.status(500).json({ error: "Path not found" });
+  }
+});
+
+// const updateBusiness = (businessId, requestData) => {
+//   let businesses = getBusinesses();
+//   let business = businesses.find((business) => {
+//     console.log(business);
+//     return requestData.r;
+//   });
+// };
+
+router.put("/:id", (req, res) => {
+  const businesses = getBusinesses();
+  const found = businesses.find((business) => business.id === req.params.id);
+
+  if (found) {
+    const update = req.body;
+
+    businesses.forEach((business) => {
+      if (business.id === req.params.id) {
+        // console.log(update.recommends);
+
+        business.recommends = update.recommends
+          ? update.recommends
+          : business.recommends;
+        // console.log(businesses);
+        // res.json({ msg: "business updated", business });
+      }
+    });
+    fs.writeFileSync(businessesPath, JSON.stringify(businesses, null, 2));
+    res.status(200).json(businesses);
   }
 });
 

@@ -3,13 +3,26 @@ import Item from "../../components/Item/Item";
 import { motion } from "framer-motion";
 import { animationOpacity, transition } from "../../animations/animations";
 import Modal from "../../components/Modal/Modal";
+import { useEffect } from "react";
+import axios from "axios";
+import { AllContext } from "../../App";
+import React, { useContext } from "react";
 
-const Home = ({ data }) => {
-  if (!data) {
+const Home = (props) => {
+  const { businesses, setBusinesses } = props;
+  const { localCart, setLocalCart } = useContext(AllContext);
+
+  // useEffect(() => {
+  //   axios.get("http://localhost:8080/businesses").then((res) => {
+  //     setBusinesses(res.data);
+  //   });
+  // }, [businesses]);
+
+  if (!businesses) {
     return "";
   }
-
-  const filtered = data.filter((item) => item.recommended);
+  console.log(props);
+  const filtered = businesses.filter((item) => item.recommended);
 
   return (
     <motion.div

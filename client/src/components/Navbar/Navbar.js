@@ -6,11 +6,18 @@ import { FaCaretDown } from "react-icons/fa";
 import Dropdown from "../Dropdown/Dropdown";
 import Button from "../Button/Button";
 import { useTransition, animated } from "react-spring";
+import AddBizButton from "../AddBizButton/AddBizButton";
+import { AllContext } from "../../App";
+import React, { useContext } from "react";
+import AddBizModal from "../AddBizModal/AddBizModal";
 
 const Navbar = () => {
+  const { localCart, setLocalCart, plannerCart, setPlannerCart } =
+    useContext(AllContext);
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [isTablet, setTablet] = useState(false);
+  const [showAddModal, setShowAddModal] = useState(false);
 
   const transition = useTransition(dropdown, {
     from: { opacity: 0 },
@@ -53,21 +60,32 @@ const Navbar = () => {
 
   window.addEventListener("resize", handleResize);
 
+  const openBizModal = () => {
+    setShowAddModal((prev) => !prev);
+    console.log(showAddModal);
+  };
+
   return (
     <nav className="nav">
+      <AddBizModal
+        showAddModal={showAddModal}
+        setShowAddModal={setShowAddModal}
+      />
       <div className="nav__logo-container">
         <Link to="/" onClick={closeMobileMenu}>
           <div className="nav__logo"></div>
         </Link>
       </div>
-      <div
-        className="nav__bars-container nav__bars-container--desktop"
-        onClick={handleClick}
-      >
+
+      <div className="nav__bars-container nav__bars-container--desktop">
+        <div className="nav__mobile" onClick={openBizModal}>
+          <AddBizButton />
+        </div>
+
         {click ? (
-          <GoX className="nav__x-icon" />
+          <GoX className="nav__x-icon" onClick={handleClick} />
         ) : (
-          <GoThreeBars className="nav__bars-icon" />
+          <GoThreeBars className="nav__bars-icon" onClick={handleClick} />
         )}
       </div>
       <ul className={click ? "nav__menu active" : "nav__menu"}>
@@ -134,11 +152,15 @@ const Navbar = () => {
             className="nav__link nav__link--container nav__link--mobile"
             onClick={closeMobileMenu}
           >
-            Planner <span className="nav__link-span">3</span>
+            Planner{" "}
+            <span className="nav__link-span">{plannerCart.length || 0}</span>
           </Link>
         </li>
       </ul>
-      <Button className="nav__btn nav__mobile" />
+      <Button className="nav__btn nav__mobile" localCart={localCart} />
+      <div className="nav__tablet" onClick={openBizModal}>
+        <AddBizButton />
+      </div>
     </nav>
   );
 };

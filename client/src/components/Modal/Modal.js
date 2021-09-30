@@ -1,10 +1,11 @@
 import "./Modal.scss";
 import { IoClose } from "react-icons/io5";
-import { IoMdLink } from "react-icons/io";
+import { IoMdLink, IoMdPin } from "react-icons/io";
 import { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import { AiFillPhone, AiFillStar } from "react-icons/ai";
 import { BiHeart } from "react-icons/bi";
+import axios from "axios";
 
 const Modal = (props) => {
   const { showModal, setShowModal, data } = props;
@@ -24,7 +25,11 @@ const Modal = (props) => {
     }
   };
 
-  console.log(data);
+  const onClickUpdate = (id) => {
+    axios.put(`http://localhost:8080/businesses/${id}`, {
+      recommends: data.recommends + 1,
+    });
+  };
 
   return (
     <>
@@ -47,7 +52,7 @@ const Modal = (props) => {
                   <div className="modal__details-container">
                     <div className="modal__name">{data.name}</div>
                     <a className="modal__btn-site" href={data.website}>
-                      <IoMdLink className="modal__link-icon" /> Website
+                      <IoMdLink className="modal__link-icon" /> Go To Site
                     </a>
                     <div
                       className={data.number ? "modal__number" : "modal--none"}
@@ -56,12 +61,13 @@ const Modal = (props) => {
                       {data.number}
                     </div>
                     <div className="modal__location-container">
+                      <IoMdPin className="modal__pin-icon" />
                       <div
                         className={
                           data.street ? "modal__street" : "modal--none"
                         }
                       >
-                        {data.street}
+                        {data.street},&nbsp;
                       </div>
                       <div className="modal__city">{data.city}</div>
                     </div>
@@ -79,9 +85,12 @@ const Modal = (props) => {
                     <AiFillStar className="modal__stars-icon" />{" "}
                     <p className="modal__stars">{data.stars}</p>
                   </div>
-                  <div className="modal__recommends-container">
+                  <div
+                    className="modal__recommends-container"
+                    onClick={() => onClickUpdate(data.id)}
+                  >
                     <BiHeart className="modal__heart-icon" />
-                    <p className="modal__recommended">Recommend this</p>
+                    <p className="modal__recommended">Recommend This</p>
                     <p className="modal__recommended-number">
                       {data.recommends}
                     </p>

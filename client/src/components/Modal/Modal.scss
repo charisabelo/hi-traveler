@@ -71,4 +71,111 @@
     display: flex;
     align-items: center;
   }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.3rem;
+    padding: 0.5rem 0;
+  }
+
+  &__btn-site {
+    display: flex;
+    align-items: center;
+    background-color: hsla(201, 100%, 60%, 0.3);
+    width: max-content;
+    border-radius: 1rem;
+    padding: 0.3rem 1.1rem;
+    margin-top: 0.5rem;
+    // margin-bottom: 1rem;
+    font-size: 1.1rem;
+
+    &:hover,
+    &:active,
+    &:visited,
+    &:link {
+      color: hsl(201, 100%, 36%);
+      font-weight: 600;
+    }
+  }
+
+  &__link-icon {
+    margin-right: 0.4rem;
+    font-size: 1.5rem;
+    padding-top: 0.2rem;
+    stroke-width: 4;
+    stroke: hsl(201, 100%, 36%);
+  }
+
+  &__number {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0 0.4rem 0;
+    font-weight: 600;
+  }
+
+  &__phone-icon,
+  &__pin-icon {
+    margin-right: 0.5rem;
+    margin-top: 0.1rem;
+    color: $darkest-platinum;
+  }
+
+  &__location-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__street {
+    font-weight: 600;
+  }
+
+  &__city {
+    font-weight: 600;
+  }
+
+  &__description {
+    padding: 1rem 0 1rem 0;
+  }
+
+  &__stars-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__stars-icon {
+    margin-right: 0.7rem;
+    font-size: 1.5rem;
+  }
+
+  &__stars {
+    font-weight: 600;
+    position: relative;
+    top: -0.1rem;
+  }
+
+  &__recommends-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  &__recommended,
+  &__recommended-number {
+    margin-left: 0.4rem;
+  }
+
+  &__recommended-number {
+    text-decoration: underline;
+  }
+
+  &__heart-icon {
+    font-size: 1.1rem;
+    position: relative;
+    top: 0.1rem;
+  }
+
+  @include tablet {
+  }
 }

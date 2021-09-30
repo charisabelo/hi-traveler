@@ -124,18 +124,33 @@
     font-weight: 600;
   }
 
+  &__mobile {
+    display: none;
+  }
+
   &__link--mobile {
     display: none;
     // position: absolute;
   }
 
-  &__bars-icon,
   &__x-icon {
     font-size: 2rem;
     margin-top: 0.4rem;
   }
+  &__bars-icon {
+    margin-left: 1rem;
+    font-size: 2rem;
+  }
 
   @include tablet {
+    &__mobile {
+      display: unset;
+    }
+
+    &__tablet {
+      display: none;
+    }
+
     &__menu {
       display: flex;
       flex-direction: column;
@@ -174,10 +189,11 @@
     }
 
     &__bars-container {
+      display: flex;
       &.nav__bars-container--desktop {
+        display: flex;
         position: relative;
         z-index: 100;
-        display: initial;
       }
     }
 

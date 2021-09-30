@@ -1,12 +1,32 @@
 import "./Item.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { IoMdPin } from "react-icons/io";
 import { FiPlus } from "react-icons/fi";
 import Modal from "../Modal/Modal";
+import { AllContext } from "../../App";
+import React, { useContext, useRef } from "react";
 
 const Item = (props) => {
   const [showModal, setShowModal] = useState(false);
+
+  const {
+    localCart,
+    setLocalCart,
+    plannerCart,
+    setPlannerCart,
+    didChange,
+    setDidChange,
+  } = useContext(AllContext);
+
+  const itemRef = useRef();
+
+  useEffect(() => {
+    // console.log("ran");
+    window.addEventListener("storage", () => {
+      setPlannerCart(JSON.parse(localStorage.getItem("planner")) || []);
+    });
+  }, [didChange]);
 
   if (!props) {
     return "";
@@ -27,6 +47,39 @@ const Item = (props) => {
     description,
   } = props.item;
 
+  const changes = () => {
+    setDidChange(!didChange);
+  };
+
+  const addToPlanner = (itemObj) => {
+    if (!localStorage.getItem("planner")) {
+      localCart.push(itemObj);
+      localStorage.setItem("planner", JSON.stringify(localCart));
+      // setLocalCart(localCart);
+      setPlannerCart(localCart);
+    } else {
+      let plannerList = JSON.parse(localStorage.getItem("planner"));
+      let find = plannerList.find((item) => itemObj.id === item.id);
+      if (!find) {
+        localCart.push(itemObj);
+        localStorage.setItem("planner", JSON.stringify(localCart));
+        // setLocalCart(localCart);
+        setPlannerCart(localCart);
+      }
+    }
+
+    changes();
+  };
+
+  // const clickBtn = (e) => {
+  //   if (itemRef.current === e.target) {
+  //     setShowModal(false);
+  //     addToPlanner(id);
+  //   }
+  // };
+
+  // console.log(recommends);
+
   return (
     <>
       <div className="modal__fullpage">
@@ -38,8 +91,8 @@ const Item = (props) => {
       </div>
 
       <div id="outer__container">
-        <div className="item" onClick={openModal}>
-          <div className="item__main-container">
+        <div className="item">
+          <div className="item__main-container" onClick={openModal}>
             <div className="item__upper-container">
               <div
                 className="item__image"
@@ -79,7 +132,10 @@ const Item = (props) => {
               </div>
             </div>
           </div>
-          <button className="item__btn">
+          <button
+            className="item__btn"
+            onClick={() => addToPlanner(props.item)}
+          >
             <FiPlus
               className="item__plus-icon"
               style={{ stroke: "white", strokeWidth: "3" }}
