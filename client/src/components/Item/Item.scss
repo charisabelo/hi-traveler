@@ -2,7 +2,7 @@
 @use "../../partials/variables.scss" as *;
 
 #outer__container {
-  padding: 1.5rem 0;
+  padding: 1.5rem 1rem;
 }
 
 .item {
@@ -17,7 +17,7 @@
 
   transition: 0.4s;
   background-color: $white;
-  margin-right: 2rem;
+  // margin-right: 2rem;
 
   &:hover {
     transform: scale(1.02);
