@@ -30,6 +30,8 @@ const App = () => {
     setPlannerCart,
     didChange,
     setDidChange,
+    businesses,
+    setBusinesses,
   };
 
   useEffect(() => {
@@ -42,16 +44,14 @@ const App = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:8080/businesses").then((res) => {
-  //     setBusinesses(res.data);
-  //   });
-  // }, [businesses]);
-
   return (
     <div className="app">
       <AllContext.Provider value={globalContext}>
-        <Navbar localCart={localCart} />
+        <Navbar
+          localCart={localCart}
+          data={businesses}
+          setBusinesses={setBusinesses}
+        />
         <div className="app__main">
           <AnimatePresence>
             <Switch location={location} key={location.pathname}>

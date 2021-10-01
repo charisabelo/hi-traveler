@@ -1,15 +1,28 @@
 import "./Modal.scss";
 import { IoClose } from "react-icons/io5";
 import { IoMdLink, IoMdPin } from "react-icons/io";
-import { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import { AiFillPhone, AiFillStar } from "react-icons/ai";
 import { BiHeart } from "react-icons/bi";
 import axios from "axios";
+import { AllContext } from "../../App";
+import React, { useContext, useRef, useEffect, useState } from "react";
 
 const Modal = (props) => {
+  const [newChange, setNewChange] = useState(false);
   const { showModal, setShowModal, data } = props;
   const modalRef = useRef();
+
+  const {
+    localCart,
+    setLocalCart,
+    plannerCart,
+    setPlannerCart,
+    didChange,
+    setDidChange,
+    businesses,
+    setBusinesses,
+  } = useContext(AllContext);
 
   const animation = useSpring({
     config: {
@@ -29,7 +42,14 @@ const Modal = (props) => {
     axios.put(`http://localhost:8080/businesses/${id}`, {
       recommends: data.recommends + 1,
     });
+    setNewChange(!newChange);
   };
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/businesses").then((res) => {
+      setBusinesses(res.data);
+    });
+  }, [newChange]);
 
   return (
     <>

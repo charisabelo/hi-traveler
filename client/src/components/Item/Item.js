@@ -22,7 +22,6 @@ const Item = (props) => {
   const itemRef = useRef();
 
   useEffect(() => {
-    // console.log("ran");
     window.addEventListener("storage", () => {
       setLocalCart(JSON.parse(localStorage.getItem("planner")) || []);
     });
@@ -70,15 +69,6 @@ const Item = (props) => {
 
     changes();
   };
-
-  // const clickBtn = (e) => {
-  //   if (itemRef.current === e.target) {
-  //     setShowModal(false);
-  //     addToPlanner(id);
-  //   }
-  // };
-
-  // console.log(recommends);
 
   return (
     <>
