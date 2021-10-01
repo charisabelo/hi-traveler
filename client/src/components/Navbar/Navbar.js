@@ -152,7 +152,8 @@ const Navbar = () => {
             className="nav__link nav__link--container nav__link--mobile"
             onClick={closeMobileMenu}
           >
-            Planner <span className="nav__link-span">{localCart.length}</span>
+            Planner{" "}
+            <span className="nav__link-span">{localCart.length || 0}</span>
           </Link>
         </li>
       </ul>

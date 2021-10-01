@@ -15,12 +15,65 @@
 
   &__container {
     display: flex;
+    justify-content: center;
+    // align-items: center;
     width: 45rem;
-    height: 50rem;
+    height: 65rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background-color: $white;
     position: relative;
     z-index: 101;
     border-radius: 1.5rem;
+    padding: 2rem 5rem;
+  }
+
+  &__name-container,
+  &__type-container,
+  &__file-container,
+  &__street-container,
+  &__city-container,
+  &__number-container,
+  &__website-container,
+  &__description-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  &__input,
+  &__input-textarea {
+    height: 4rem;
+    border-radius: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: $platinum;
+    padding-left: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  &__input-textarea {
+    padding-top: 1rem;
+    height: 5rem;
+  }
+
+  &__btn {
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: $white;
+    font-weight: 600;
+    background-color: hsl(101, 73%, 48%);
+    cursor: pointer;
+    width: 10rem;
+  }
+
+  &__input-select {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+  }
+
+  &__file-label {
+    margin-bottom: 0.5rem;
   }
 }
