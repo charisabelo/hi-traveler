@@ -10,7 +10,7 @@
     "city": "Kailua-Kona, HI",
     "number": "808-327-1113",
     "website": "https://www.facebook.com/BROKEDAMOUTHGRINDZKONA/",
-    "image": "http://localhost:8080/images/broke-da-mouth.png",
+    "image": "https://hi-traveler.herokuapp.com/images/broke-da-mouth.png",
     "stars": "4.6",
     "description": "Offbeat, neighborhood nook preparing hearty portions of locally sourced Hawaiian & Filipino staples."
   },
@@ -25,7 +25,7 @@
     "city": "Kailua-Kona, HI",
     "number": "808-300-0044",
     "website": "https://papakonarestaurant.com/",
-    "image": "http://localhost:8080/images/papa-kona.png",
+    "image": "https://hi-traveler.herokuapp.com/images/papa-kona.png",
     "stars": "4.4",
     "description": "Oceanfront, outdoor dining for breakfast, lunch or dinner in the heart of Kailua Kona. Papa Kona has live music every night!"
   },
@@ -40,7 +40,7 @@
     "city": "Kailua-Kona, HI",
     "number": "808-238-0571",
     "website": "https://www.umekesrestaurants.com/",
-    "image": "http://localhost:8080/images/umekes.png",
+    "image": "https://hi-traveler.herokuapp.com/images/umekes.png",
     "stars": "4.5",
     "description": "Umekes prides itself in serving dishes using local ingredients that are of the highest quality. We source as many ingredients as possible from local fisherman, farmers, and ranchers. Our renowned poke is always created with only the freshest fish from Hawaiian waters as we aspire to share the boat to bowl experience with all of our guests."
   },
@@ -55,7 +55,7 @@
     "city": "Kailua-Kona, HI",
     "number": "808-326-1153",
     "website": "https://www.facebook.com/BigIslandGrill/",
-    "image": "http://localhost:8080/images/bigislandgrill.png",
+    "image": "https://hi-traveler.herokuapp.com/images/bigislandgrill.png",
     "stars": "4.7",
     "description": "Roomy, unassuming restaurant serving Hawaiian staples including loco moco, saimin & Kalua pork."
   },
@@ -70,7 +70,7 @@
     "city": "Kailua-Kona, HI",
     "number": " 808-329-7653",
     "website": "http://dapokeshack.com/",
-    "image": "http://localhost:8080/images/dapokeshack.png",
+    "image": "https://hi-traveler.herokuapp.com/images/dapokeshack.png",
     "stars": "4.7",
     "description": "Seafood joint by the beach for take-out poke & other local specialties & salads."
   },
@@ -85,7 +85,7 @@
     "city": "Kailua-Kona, HI",
     "number": "808-326-1600",
     "website": "https://www.fosterskitchen.com/",
-    "image": "http://localhost:8080/images/fosterskitchen.png",
+    "image": "https://hi-traveler.herokuapp.com/images/fosterskitchen.png",
     "stars": "4.7",
     "description": "Foster’s Kitchen only uses the freshest ingredients available to us inside all our daily preparations in our kitchen. Our innovative Chef has found inspiration from the beauty of our island and is adamant about serving only the best of freshly prepared foods. From first glance to last bite, you can tell there’s something different about our culinary cuisine."
   },
@@ -100,7 +100,7 @@
     "city": "Kailua-Kona, HI",
     "number": "808-329-8711",
     "website": "https://huggosontherocks.com/",
-    "image": "http://localhost:8080/images/huggosontherocks.png",
+    "image": "https://hi-traveler.herokuapp.com/images/huggosontherocks.png",
     "stars": "4.7",
     "description": "Serving lunch, sunset cocktails and pupus, and dinner daily, On the Rocks welcomes you day and night! The menus offers a vast array of refreshing tropical libations and innovative dishes all prepared with the freshest island ingredients and made to perfection. Happy hour begins at 3PM, ending at 5PM daily, with a great selection of cocktails and pupus offered!"
   },
@@ -116,7 +116,7 @@
     "city": " Waimea, HI 96743",
     "number": "",
     "website": "",
-    "image": "http://localhost:8080/images/maunakeabeach.png",
+    "image": "https://hi-traveler.herokuapp.com/images/maunakeabeach.png",
     "stars": "",
     "description": "Mauna Kea beach is a family friendly beach with white soft sand that slopes gently into the water and the palm trees along the fringe to provide shade. The beach fronts the Mauna Kea Beach Hotel, has good access to facilities and is great for sunbathing. During the calm summer months, this is also a good beach to go snorkeling."
   },
@@ -132,7 +132,7 @@
     "city": "Hapuna Beach Rd",
     "number": "",
     "website": "",
-    "image": "http://localhost:8080/images/hapuna.png",
+    "image": "https://hi-traveler.herokuapp.com/images/hapuna.png",
     "stars": "",
     "description": "Located on Hawaii’s Big Island, the Hapuna Beach State Recreation Area is a popular destination spot, counted as among the best beaches in the world. Hapuna Beach was named the Best Beach in America by the Florida International University in 1993."
   },
@@ -148,7 +148,7 @@
     "city": "On Hwy 19 Between the 88 and 89-mile markers",
     "number": "",
     "website": "",
-    "image": "http://localhost:8080/images/kuabay.png",
+    "image": "https://hi-traveler.herokuapp.com/images/kuabay.png",
     "stars": "",
     "description": "Also known as Maniniowali Beach, one of the prettiest white-sand beaches on the Big Island. Fine white sand and crystal clear waters make this is a great place for snorkeling and swimming. Be careful is the surf is high!"
   },
@@ -164,7 +164,7 @@
     "city": "Kahaluu-Keauhou, HI 96740",
     "number": "808-329-8711",
     "website": "https://huggosontherocks.com/",
-    "image": "http://localhost:8080/images/kahaluu.png",
+    "image": "https://hi-traveler.herokuapp.com/images/kahaluu.png",
     "stars": "",
     "description": "Small beach & reef with generally calm water, making it a popular place to snorkel."
   },
@@ -180,7 +180,7 @@
     "city": "Kailua-Kona, HI 96740",
     "number": "",
     "website": "",
-    "image": "http://localhost:8080/images/makalawena.png",
+    "image": "https://hi-traveler.herokuapp.com/images/makalawena.png",
     "stars": "",
     "description": "One of the prettiest white-sand beaches of Hawaii. Only reachable by a strenuous 1-mile hike beyond Mahai’ula Beach Park."
   },
@@ -195,7 +195,7 @@
     "city": "Hawaii National Park, HI 96718",
     "number": "808-985-6000",
     "website": "https://www.nps.gov/havo/index.htm",
-    "image": "http://localhost:8080/images/volcanoespark.png",
+    "image": "https://hi-traveler.herokuapp.com/images/volcanoespark.png",
     "stars": "",
     "description": "Hawaii Volcanoes National Park is on Hawaii Island (the Big Island). At its heart are the Kīlauea and Mauna Loa active volcanoes. The Crater Rim Drive passes steam vents and the Jaggar Museum, which features volcanology exhibits and a viewpoint overlooking Halema'uma'u Crater. Thick ferns mark the entrance to the Thurston Lava Tube (Nāhuku). The Chain of Craters Road weaves over lava. Trails crisscross the park."
   },
@@ -210,7 +210,7 @@
     "city": "Volcano, HI 96785",
     "number": "808-967-7772",
     "website": "https://volcanowinery.com/",
-    "image": "http://localhost:8080/images/volcanowinery.png",
+    "image": "https://hi-traveler.herokuapp.com/images/volcanowinery.png",
     "stars": "4.6",
     "description": "Vineyard with a variety of wines made from area-sourced ingredients, plus tastings & a gift store."
   },
@@ -225,7 +225,7 @@
     "city": "Kailua-Kona, HI 96740",
     "number": "808-938-4057",
     "website": "https://www.kailanitourshawaii.com/",
-    "image": "http://localhost:8080/images/kailani.png",
+    "image": "https://hi-traveler.herokuapp.com/images/kailani.png",
     "stars": "5.0",
     "description": "We know that vacations require SO many decisions. We aim to take that stress out of your life. Forget about renting a car, looking up directions, finding the best coffee farm and scheduling out your day. We offer full- and half-day tours designed with YOU in mind."
   },
@@ -240,7 +240,7 @@
     "city": "Kailua-Kona, HI 96740",
     "number": "808-322-2788",
     "website": "https://www.fair-wind.com/",
-    "image": "http://localhost:8080/images/fairwind.png",
+    "image": "https://hi-traveler.herokuapp.com/images/fairwind.png",
     "stars": "4.9",
     "description": "Since 1971, Fair Wind Cruises provides top-rated Big Island of Hawaii snorkel tours from Kona.  Hop aboard one of our daily Kona snorkel boat tours to Kealakekua Bay’s pristine waters or to explore remote south Kona.  Have a deluxe experience on a morning snorkel tour to Kealakekua Bay, or enjoy the bay to yourselves on our shorter afternoon snorkel tour. "
   },
@@ -255,7 +255,7 @@
     "city": "Kailua-Kona, HI 96740",
     "number": "808-322-2788",
     "website": "https://hawaiiexperiences.com/tours/manta-ray-tours/",
-    "image": "http://localhost:8080/images/mantaray.png",
+    "image": "https://hi-traveler.herokuapp.com/images/mantaray.png",
     "stars": "4.9",
     "description": "Let the Kona'nia take you on an aquatic adventure along the western shores of the Big Island of Hawaii. Go snorkeling, diving, and swimming in the Hawaiian waters where you will get up-close-and personal encounters with the enchanting and beautiful manta rays!"
   },
@@ -270,7 +270,7 @@
     "city": "Kailua-Kona, HI 96740",
     "number": "808-969-7392",
     "website": "https://paradisecopters.com/#home-tours-row",
-    "image": "http://localhost:8080/images/paradisehelicopters.png",
+    "image": "https://hi-traveler.herokuapp.com/images/paradisehelicopters.png",
     "stars": "4.7",
     "description": "Hawaii helicopter tours that immerse you in the culture of the islands, and reveal the hidden beauty of our home. Our experiences depart from six bases across Hawaii."
   },
@@ -285,7 +285,7 @@
     "city": "Kailua-Kona, HI 96740",
     "number": "1-800-551-8911",
     "website": "https://www.bodyglovehawaii.com/",
-    "image": "http://localhost:8080/images/bodyglove.png",
+    "image": "https://hi-traveler.herokuapp.com/images/bodyglove.png",
     "stars": "4.6",
     "description": "All of our cruises are complemented by the first-class amenities on board our state-of-the-art, 65-ft. catamaran. The Kanoa II is an award-winning, multi-million dollar vessel designed with quality and comfort in mind. Enjoy plenty of shade, cushioned seating, flat screen televisions, a full sound system for live entertainment, and our full-service premium cash bar. "
   },
@@ -300,7 +300,7 @@
     "city": "Hawaii 96710",
     "number": "808-930-9477",
     "website": "https://umaumaexperience.com/",
-    "image": "http://localhost:8080/images/umauma.png",
+    "image": "https://hi-traveler.herokuapp.com/images/umauma.png",
     "stars": "4.7",
     "description": "Zipline over Umauma River and falls, rappel down waterfalls, get down and dirty on an ATV, explore on horseback and more with the entire family! Rain or shine the Umauma Experience will be the highlight of your Big Island visit!"
   },
@@ -315,7 +315,7 @@
     "city": "Hilo, HI 96720",
     "number": "808-964-1000",
     "website": "https://kapohokine.com/",
-    "image": "http://localhost:8080/images/kapohokinezipline.png",
+    "image": "https://hi-traveler.herokuapp.com/images/kapohokinezipline.png",
     "stars": "4.9",
     "description": "KapohoKine Adventures offers the best small group adventure tours that include the incredible volcanic formations of Kilauea Volcano, lush rainforests, breathtaking waterfalls, and the amazing natural beauty of the Big Island of Hawaii. We hope that exposing more people to the real Hawaii, places of pristine natural beauty and ancient raw power, will help to keep traditional Hawaii alive."
   },
@@ -330,7 +330,7 @@
     "city": "Holualoa, HI 96725",
     "number": "808-796-0110",
     "website": "https://alohaadventurefarms.com/",
-    "image": "http://localhost:8080/images/alohaadventureatv.png",
+    "image": "https://hi-traveler.herokuapp.com/images/alohaadventureatv.png",
     "stars": "5.0",
     "description": "Travel through time as you experience thousands of years worth of culture in an untouched Hawaiian jungle where ancient Hawaiians once lived, worked and played."
   },
@@ -345,7 +345,7 @@
     "city": "Waikoloa Beach, HI 96738",
     "number": "808-886-6789",
     "website": "https://www.waikoloabeachresort.com/luau/",
-    "image": "http://localhost:8080/images/marriottluau.png",
+    "image": "https://hi-traveler.herokuapp.com/images/marriottluau.png",
     "stars": "4.5",
     "description": "The Sunset Luau at the Waikoloa Beach Marriott Resort and Spa is the Big Island’s most authentic luau. The beautiful Anaehoomalu Bay is the background for this original Hawaiian luau. A short drive from the Big Island’s town of Kona this is a spectacular show not to be missed."
   },
@@ -360,7 +360,7 @@
     "city": "Kamuela, HI 96743",
     "number": "undefined",
     "website": "https://waimeamidweekfarmersmarket.com/",
-    "image": "http://localhost:8080//images/aad5307238371de07b09f2042fd7236a.png",
+    "image": "https://hi-traveler.herokuapp.com/images/aad5307238371de07b09f2042fd7236a.png",
     "stars": "",
     "description": "Waimea (also known as Kamuela), is host to several Farmers Markets, including the the Waimea Homestead Farmers Market. The list of products is seemingly endless with everything from the traditional flowers and fresh vegetables and fruits; to exotics like Goat Cheese, handmade personal care products, and Hawaiian herbal remedies. The food options range from treats to hearty meals, freshly baked breads, local macadamia nuts, and value added items like butters and jams/jellies. "
   }

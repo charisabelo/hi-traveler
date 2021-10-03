@@ -6,24 +6,8 @@ const path = require("path");
 const fileUpload = require("express-fileupload");
 const util = require("util");
 
-// const multer = require("multer");
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     console.log(req);
-//     cb(null, "../public/images");
-//   },
-
-//   filename: (req, file, cb) => {
-//     console.log(file);
-//     cb(null, Date.now() + path.extname(file.originalname));
-//   },
-// });
-
-// const path = "../public/images";
-
 const businessesPath = "./data/businesses.json";
 
-// get all businesses
 const getBusinesses = () => {
   const fileContent = fs.readFileSync(businessesPath);
   const parsedFileContent = JSON.parse(fileContent);
@@ -54,8 +38,6 @@ router.get("/:id", (req, res) => {
   }
 });
 
-// const upload = multer();
-
 router.post("/", async (req, res) => {
   try {
     const file = req.files.image;
@@ -68,7 +50,7 @@ router.post("/", async (req, res) => {
     if (!allowedExtensions.test(extension)) throw "unsupported extension";
 
     const md5 = file.md5;
-    const URL = "/images/" + md5 + extension;
+    const URL = "images/" + md5 + extension;
     util.promisify(file.mv)("./public" + URL);
 
     const allBusinesses = getBusinesses();
@@ -84,7 +66,7 @@ router.post("/", async (req, res) => {
       city: req.body.city,
       number: req.body.number,
       website: req.body.website,
-      image: `http://localhost:8080/${URL}`,
+      image: `https://hi-traveler.herokuapp.com/${URL}`,
       stars: "",
       description: req.body.description,
     };
@@ -99,29 +81,6 @@ router.post("/", async (req, res) => {
       message: err,
     });
   }
-
-  // const allBusinesses = getBusinesses();
-
-  // const newBusiness = {
-  //   id: uuidv4(),
-  //   name: req.body.name,
-  //   type: req.body.type,
-  //   recommended: false,
-  //   recommends: 0,
-  //   smallbusiness: true,
-  //   street: req.body.street,
-  //   city: req.body.street,
-  //   number: req.body.number,
-  //   website: req.body.website,
-  //   image: `http://localhost:8080/${req.body.image}`,
-  //   stars: "",
-  //   description: req.body.description,
-  // };
-
-  // allBusinesses.push(newBusiness);
-
-  // fs.writeFileSync(businessesPath, JSON.stringify(allBusinesses, null, 2));
-  // res.status(200).json(newBusiness);
 });
 
 router.put("/:id", (req, res) => {
@@ -133,13 +92,9 @@ router.put("/:id", (req, res) => {
 
     businesses.forEach((business) => {
       if (business.id === req.params.id) {
-        // console.log(update.recommends);
-
         business.recommends = update.recommends
           ? update.recommends
           : business.recommends;
-        // console.log(businesses);
-        // res.json({ msg: "business updated", business });
       }
     });
     fs.writeFileSync(businessesPath, JSON.stringify(businesses, null, 2));
