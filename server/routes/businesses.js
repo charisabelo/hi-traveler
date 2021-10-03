@@ -81,7 +81,7 @@ router.post("/", async (req, res) => {
       recommends: 0,
       smallbusiness: true,
       street: req.body.street,
-      city: req.body.street,
+      city: req.body.city,
       number: req.body.number,
       website: req.body.website,
       image: `http://localhost:8080/${URL}`,

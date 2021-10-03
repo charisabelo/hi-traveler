@@ -5,7 +5,9 @@ import axios from "axios";
 import { AllContext } from "../../App";
 import React, { useContext } from "react";
 
-const AddBizModal = ({ showAddModal, setShowAddModal }) => {
+const AddBizModal = (props) => {
+  const { showAddModal, setShowAddModal } = props;
+
   const animation = useSpring({
     config: {
       duration: 250,
@@ -14,16 +16,7 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
     transform: showAddModal ? `scale(1)` : `scale(0)`,
   });
 
-  const {
-    localCart,
-    setLocalCart,
-    plannerCart,
-    setPlannerCart,
-    didChange,
-    setDidChange,
-    businesses,
-    setBusinesses,
-  } = useContext(AllContext);
+  const { setBusinesses } = useContext(AllContext);
 
   const [name, setName] = useState();
   const [type, setType] = useState();
@@ -40,7 +33,7 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
     axios.get("http://localhost:8080/businesses").then((res) => {
       setBusinesses(res.data);
     });
-  }, [changed]);
+  }, [changed, setBusinesses]);
 
   const overlayRef = useRef();
   const closeModal = (e) => {
@@ -49,32 +42,8 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
     }
   };
 
-  // const handleOnChange = (e) => {
-  //   setFormData({
-  //     ...formData,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    // const formName = formRef.current.name;
-    // const formType = formRef.current.type;
-    // const formStreet = formRef.current.street;
-    // const formCity = formRef.current.city;
-    // const formNumber = formRef.current.number;
-    // const formWebsite = formRef.current.website;
-    // const formImage = formRef.current.image;
-    // const formDescription = formRef.current.description;
-
-    // console.log("name", formName);
-    // console.log("type", formType);
-    // console.log("street", formStreet);
-    // console.log("city", formCity);
-    // console.log("number", formNumber);
-    // console.log("website", formWebsite);
-    // console.log("image", formImage);
-    // console.log("descr", formDescription);
 
     const data = new FormData();
     data.append("name", name);
@@ -85,20 +54,6 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
     data.append("website", website);
     data.append("image", image);
     data.append("description", description);
-
-    // console.log(data);
-    // http://localhost:8080/businesses/
-    /*{
-       
-        // name: formData.name,
-        // type: formData.type,
-        // street: formData.street,
-        // city: formData.city,
-        // number: formData.number,
-        // website: formData.website,
-        // image: formData.image,
-        // description: formData.description,
-      }*/
 
     axios
       .post(`http://localhost:8080/businesses/`, data)
@@ -113,10 +68,7 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
         <div className="add-modal" ref={overlayRef} onClick={closeModal}>
           <animated.div style={animation}>
             <div className="add-modal__container">
-              <form
-                onSubmit={handleOnSubmit}
-                /*ref={formRef}*/ autoComplete="off"
-              >
+              <form onSubmit={handleOnSubmit} autoComplete="off">
                 <div className="add-modal__name-container">
                   <label htmlFor="name" className="add-modal__name-label">
                     Business Name
@@ -140,7 +92,6 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
                   <select
                     className="add-modal__input-select"
                     name="type"
-                    // onChange={handleOnChange}
                     onChange={(event) => {
                       const { value } = event.target;
                       setType(value);
@@ -174,7 +125,6 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
                     className="add-modal__input"
                     placeholder="Enter street here"
                     name="street"
-                    // onChange={handleOnChange}
                     onChange={(event) => {
                       const { value } = event.target;
                       setStreet(value);
@@ -189,7 +139,6 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
                     className="add-modal__input"
                     placeholder="Enter city & zipcode here"
                     name="city"
-                    // onChange={handleOnChange}
                     onChange={(event) => {
                       const { value } = event.target;
                       setCity(value);
@@ -204,7 +153,6 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
                     className="add-modal__input"
                     placeholder="Enter number here"
                     name="number"
-                    // onChange={handleOnChange}
                     onChange={(event) => {
                       const { value } = event.target;
                       setNumber(value);
@@ -220,7 +168,6 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
                     name="website"
                     className="add-modal__input"
                     placeholder="Enter website here"
-                    // onChange={handleOnChange}
                     onChange={(event) => {
                       const { value } = event.target;
                       setWebsite(value);
@@ -235,7 +182,6 @@ const AddBizModal = ({ showAddModal, setShowAddModal }) => {
                     name="description"
                     className="add-modal__input-textarea"
                     placeholder="Enter business description here"
-                    // onChange={handleOnChange}
                     onChange={(event) => {
                       const { value } = event.target;
                       setDescription(value);

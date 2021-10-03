@@ -4,14 +4,7 @@ import { AllContext } from "../../App";
 import React, { useContext } from "react";
 
 const Button = () => {
-  const {
-    localCart,
-    setLocalCart,
-    plannerCart,
-    setPlannerCart,
-    didChange,
-    setDidChange,
-  } = useContext(AllContext);
+  const { localCart } = useContext(AllContext);
 
   return (
     <Link to="/planner" className="button">

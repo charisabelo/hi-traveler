@@ -5,27 +5,19 @@ import { IoMdPin } from "react-icons/io";
 import { FiPlus } from "react-icons/fi";
 import Modal from "../Modal/Modal";
 import { AllContext } from "../../App";
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 
 const Item = (props) => {
   const [showModal, setShowModal] = useState(false);
 
-  const {
-    localCart,
-    setLocalCart,
-    plannerCart,
-    setPlannerCart,
-    didChange,
-    setDidChange,
-  } = useContext(AllContext);
-
-  const itemRef = useRef();
+  const { localCart, setLocalCart, setPlannerCart, didChange, setDidChange } =
+    useContext(AllContext);
 
   useEffect(() => {
     window.addEventListener("storage", () => {
       setLocalCart(JSON.parse(localStorage.getItem("planner")) || []);
     });
-  }, [didChange]);
+  }, [didChange, setLocalCart]);
 
   if (!props) {
     return "";
@@ -35,16 +27,7 @@ const Item = (props) => {
     setShowModal((prev) => !prev);
   };
 
-  const {
-    id,
-    name,
-    smallbusiness,
-    stars,
-    city,
-    image,
-    recommends,
-    description,
-  } = props.item;
+  const { name, stars, city, image, recommends, description } = props.item;
 
   const changes = () => {
     setDidChange(!didChange);
@@ -54,7 +37,6 @@ const Item = (props) => {
     if (!localStorage.getItem("planner")) {
       localCart.push(itemObj);
       localStorage.setItem("planner", JSON.stringify(localCart));
-      // setLocalCart(localCart);
       setPlannerCart(localCart);
     } else {
       let plannerList = JSON.parse(localStorage.getItem("planner"));
@@ -62,7 +44,6 @@ const Item = (props) => {
       if (!find) {
         localCart.push(itemObj);
         localStorage.setItem("planner", JSON.stringify(localCart));
-        // setLocalCart(localCart);
         setPlannerCart(localCart);
       }
     }

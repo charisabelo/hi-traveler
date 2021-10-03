@@ -12,8 +12,7 @@ import React, { useContext } from "react";
 import AddBizModal from "../AddBizModal/AddBizModal";
 
 const Navbar = () => {
-  const { localCart, setLocalCart, plannerCart, setPlannerCart } =
-    useContext(AllContext);
+  const { localCart } = useContext(AllContext);
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [isTablet, setTablet] = useState(false);
@@ -62,7 +61,6 @@ const Navbar = () => {
 
   const openBizModal = () => {
     setShowAddModal((prev) => !prev);
-    // console.log(showAddModal);
   };
 
   return (
@@ -134,7 +132,6 @@ const Navbar = () => {
             <Link to="#" className="nav__link dropdown">
               Categories <FaCaretDown className="nav__link-caret" />
             </Link>
-            {/* {dropdown ? <Dropdown /> : ""} */}
             {transition((style, itemAnimate) => {
               return itemAnimate ? (
                 <animated.div className="itemAnimate" style={style}>

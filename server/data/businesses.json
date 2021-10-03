@@ -34,7 +34,7 @@
     "name": "Umekes Fish Market Bar & Grill",
     "type": "restaurant",
     "recommended": true,
-    "recommends": 8,
+    "recommends": 9,
     "smallbusiness": true,
     "street": "74-5599 Pawai Pl",
     "city": "Kailua-Kona, HI",
@@ -249,7 +249,7 @@
     "name": "Hawaii Experiences / Iruka",
     "type": "tour",
     "recommended": true,
-    "recommends": 3,
+    "recommends": 4,
     "smallbusiness": false,
     "street": "78-7130 Kaleiopapa St",
     "city": "Kailua-Kona, HI 96740",
@@ -294,7 +294,7 @@
     "name": "Umauma Experience",
     "type": "tour",
     "recommended": true,
-    "recommends": 1,
+    "recommends": 2,
     "smallbusiness": false,
     "street": "31-313 Old Mamalahoa Highway Hakalau",
     "city": "Hawaii 96710",
@@ -348,5 +348,20 @@
     "image": "http://localhost:8080/images/marriottluau.png",
     "stars": "4.5",
     "description": "The Sunset Luau at the Waikoloa Beach Marriott Resort and Spa is the Big Island’s most authentic luau. The beautiful Anaehoomalu Bay is the background for this original Hawaiian luau. A short drive from the Big Island’s town of Kona this is a spectacular show not to be missed."
+  },
+  {
+    "id": "21ce0db0-7d54-444b-ae9a-10282a9e5514",
+    "name": "Waimea Farmers Market",
+    "type": "attraction",
+    "recommended": false,
+    "recommends": 0,
+    "smallbusiness": true,
+    "street": "67-1319 Pukalani Road",
+    "city": "Kamuela, HI 96743",
+    "number": "undefined",
+    "website": "https://waimeamidweekfarmersmarket.com/",
+    "image": "http://localhost:8080//images/aad5307238371de07b09f2042fd7236a.png",
+    "stars": "",
+    "description": "Waimea (also known as Kamuela), is host to several Farmers Markets, including the the Waimea Homestead Farmers Market. The list of products is seemingly endless with everything from the traditional flowers and fresh vegetables and fruits; to exotics like Goat Cheese, handmade personal care products, and Hawaiian herbal remedies. The food options range from treats to hearty meals, freshly baked breads, local macadamia nuts, and value added items like butters and jams/jellies. "
   }
 ]

@@ -6,8 +6,7 @@ import React, { useContext } from "react";
 import Item from "../../components/Item/Item";
 
 const Planner = () => {
-  const { localCart, setLocalCart, plannerCart, setPlannerCart } =
-    useContext(AllContext);
+  const { localCart } = useContext(AllContext);
 
   return (
     <motion.div

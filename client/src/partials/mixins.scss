@@ -8,8 +8,20 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+@mixin desktop-adjust {
+  @media (max-width: 860px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-mid {
+  @media (max-width: 550px) {
     @content;
   }
 }

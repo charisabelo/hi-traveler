@@ -34,10 +34,7 @@
 
   &__photo {
     border-radius: 1.5rem;
-    // padding: 0.2rem 0 0.2rem 0.2rem;
-    // transform: scale(1.007);
     height: 100%;
-    // width: 46rem;
     width: 56%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -87,7 +84,6 @@
     border-radius: 1rem;
     padding: 0.3rem 1.1rem;
     margin-top: 0.5rem;
-    // margin-bottom: 1rem;
     font-size: 1.1rem;
 
     &:hover,
@@ -176,6 +172,38 @@
     top: 0.1rem;
   }
 
-  @include tablet {
+  @include desktop-adjust {
+    &__container {
+      flex-direction: column;
+      width: 50rem;
+      height: 80rem;
+    }
+
+    &__photo {
+      height: 50%;
+      width: 100%;
+    }
+  }
+
+  &__main {
+    align-content: space-between;
+    height: 50%;
+    width: 100%;
+  }
+
+  @include tablet-mid {
+    &__container {
+      flex-direction: column;
+      width: 35rem;
+      height: 80rem;
+    }
+
+    &__photo {
+      height: 40%;
+    }
+
+    &__main {
+      height: 60%;
+    }
   }
 }

@@ -2,12 +2,8 @@ import "./Tours.scss";
 import Item from "../../components/Item/Item";
 import { motion } from "framer-motion";
 import { animationOpacity, transition } from "../../animations/animations";
-import { AllContext } from "../../App";
-import React, { useContext } from "react";
 
 const Tours = ({ data }) => {
-  const { localCart, setLocalCart } = useContext(AllContext);
-
   if (!data) {
     return "";
   }

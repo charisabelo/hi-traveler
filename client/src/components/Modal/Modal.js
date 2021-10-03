@@ -10,19 +10,14 @@ import React, { useContext, useRef, useEffect, useState } from "react";
 
 const Modal = (props) => {
   const [newChange, setNewChange] = useState(false);
+  // const [recommended, setRecommended] = useState(false);
+  // const [recommendsObj, setRecommendsObj] = useState(
+  //   JSON.parse(localStorage.getItem("recommendsObj")) || []
+  // );
   const { showModal, setShowModal, data } = props;
   const modalRef = useRef();
 
-  const {
-    localCart,
-    setLocalCart,
-    plannerCart,
-    setPlannerCart,
-    didChange,
-    setDidChange,
-    businesses,
-    setBusinesses,
-  } = useContext(AllContext);
+  const { setBusinesses } = useContext(AllContext);
 
   const animation = useSpring({
     config: {
@@ -39,9 +34,28 @@ const Modal = (props) => {
   };
 
   const onClickUpdate = (id) => {
+    // **future feature
+    // const arrObj = JSON.parse(localStorage.getItem("recommendsObj")) || [];
+
+    // if (!localStorage.getItem("recommendsObj")) {
+    // }
+    // if (arrObj.length > 0) {
+    //   const found = arrObj.find((item) => item.id === data.id);
+    //   if (found) {
+    //     axios.put(`http://localhost:8080/businesses/${id}`, {
+    //       recommends: data.recommends - 1,
+    //     });
+    //   } else {
+    //     axios.put(`http://localhost:8080/businesses/${id}`, {
+    //       recommends: data.recommends + 1,
+    //     });
+    //   }
+    // }
+
     axios.put(`http://localhost:8080/businesses/${id}`, {
       recommends: data.recommends + 1,
     });
+
     setNewChange(!newChange);
   };
 
@@ -49,7 +63,7 @@ const Modal = (props) => {
     axios.get("http://localhost:8080/businesses").then((res) => {
       setBusinesses(res.data);
     });
-  }, [newChange]);
+  }, [newChange, setBusinesses]);
 
   return (
     <>
@@ -74,12 +88,22 @@ const Modal = (props) => {
                     <a className="modal__btn-site" href={data.website}>
                       <IoMdLink className="modal__link-icon" /> Go To Site
                     </a>
+
                     <div
-                      className={data.number ? "modal__number" : "modal--none"}
+                      className={
+                        !data.number || data.number === "undefined"
+                          ? "modal--hidden"
+                          : "modal__number"
+                      }
                     >
-                      <AiFillPhone className="modal__phone-icon" />{" "}
+                      <AiFillPhone
+                        className={
+                          data.number ? "modal__phone-icon" : "modal--none"
+                        }
+                      />{" "}
                       {data.number}
                     </div>
+
                     <div className="modal__location-container">
                       <IoMdPin className="modal__pin-icon" />
                       <div

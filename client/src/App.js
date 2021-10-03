@@ -1,5 +1,5 @@
 import "./App.scss";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
