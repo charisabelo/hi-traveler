@@ -42,17 +42,17 @@ const Modal = (props) => {
     // if (arrObj.length > 0) {
     //   const found = arrObj.find((item) => item.id === data.id);
     //   if (found) {
-    //     axios.put(`http://localhost:8080/businesses/${id}`, {
+    //     axios.put(`https://hi-traveler.herokuapp.com/${id}`, {
     //       recommends: data.recommends - 1,
     //     });
     //   } else {
-    //     axios.put(`http://localhost:8080/businesses/${id}`, {
+    //     axios.put(`https://hi-traveler.herokuapp.com/${id}`, {
     //       recommends: data.recommends + 1,
     //     });
     //   }
     // }
 
-    axios.put(`http://localhost:8080/businesses/${id}`, {
+    axios.put(`https://hi-traveler.herokuapp.com/businesses/${id}`, {
       recommends: data.recommends + 1,
     });
 
@@ -60,7 +60,7 @@ const Modal = (props) => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:8080/businesses").then((res) => {
+    axios.get("https://hi-traveler.herokuapp.com/businesses").then((res) => {
       setBusinesses(res.data);
     });
   }, [newChange, setBusinesses]);

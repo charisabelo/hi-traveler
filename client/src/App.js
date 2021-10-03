@@ -39,7 +39,7 @@ const App = () => {
       setLocalCart(JSON.parse(localStorage.getItem("planner")));
     }
 
-    axios.get("http://localhost:8080/businesses").then((res) => {
+    axios.get("https://hi-traveler.herokuapp.com/businesses").then((res) => {
       setBusinesses(res.data);
     });
   }, []);

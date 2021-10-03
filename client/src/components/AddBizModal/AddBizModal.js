@@ -30,7 +30,7 @@ const AddBizModal = (props) => {
   const [changed, setChanged] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/businesses").then((res) => {
+    axios.get("https://hi-traveler.herokuapp.com/businesses").then((res) => {
       setBusinesses(res.data);
     });
   }, [changed, setBusinesses]);
@@ -56,7 +56,7 @@ const AddBizModal = (props) => {
     data.append("description", description);
 
     axios
-      .post(`http://localhost:8080/businesses/`, data)
+      .post(`https://hi-traveler.herokuapp.com/businesses`, data)
       .then((res) => console.log(res));
     setShowAddModal(false);
     setChanged(!changed);

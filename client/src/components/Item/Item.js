@@ -71,14 +71,7 @@ const Item = (props) => {
                   backgroundImage: `url(${image})`,
                 }}
               >
-                <div className="item__business-container">
-                  {/* {smallbusiness && (
-                <>
-                  <GiIsland className="item__image-icon" />
-                  <p className="item__small-business">Small Business</p>
-                </>
-              )} */}
-                </div>
+                <div className="item__business-container"></div>
               </div>
               <div className="item__details">
                 <h5 className="item__header">{name}</h5>
