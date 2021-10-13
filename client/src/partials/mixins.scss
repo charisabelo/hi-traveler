@@ -9,7 +9,7 @@
 }
 
 @mixin desktop-adjust {
-  @media (max-width: 860px) {
+  @media (max-width: 850px) {
     @content;
   }
 }
