@@ -53,6 +53,8 @@ a:active {
 .app {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  max-width: 160rem;
 
   &__main {
     padding: 0 8rem;
